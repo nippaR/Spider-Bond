@@ -2,6 +2,7 @@ import React from 'react';
 import {Box, Grid, Typography,Button,Stack} from '@mui/material';
 import backgroundImage from '../img/wp14198855.webp'; // Import the image
 import Header from './Header';
+import TakeMe from './TakeMe';
 
 const HomePage = () => {
   return (
@@ -29,7 +30,7 @@ const HomePage = () => {
        Spidey Bond
       </Typography>
 
-            <Typography variant="h4" sx={{my:5, fontFamily: 'poppins', fontWeight: 100, fontSize: '1rem' }}>
+            <Typography variant="h4" sx={{my:5, fontFamily: 'poppins', fontWeight: 250, fontSize: '1rem' }}>
                 He said the idea for Spider-Man arose from a surge in teenage  {<br />}
                 demand for comic books and the desire to create a character {<br />}
                 with whom teens could identify. As with Fantastic Four, Lee saw {<br />}
@@ -51,7 +52,8 @@ const HomePage = () => {
               </Button>
       </Grid>
       <Grid item xs={12} sm={6}>
-      <Box  sx={{
+      <TakeMe />
+      {/* <Box  sx={{
             width: '400px', // Set the width of the rectangle
             height: '480px', // Set the height of the rectangle
             backgroundColor: 'black', // Set the background color
@@ -59,7 +61,7 @@ const HomePage = () => {
             borderRadius: '80px', // Optional: add border radius for rounded corners
             boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', // Add shadow for depth
           }}>
-      </Box>
+      </Box> */}
       <Button variant="contained" 
         sx={{fontFamily: 'poppins',
              fontWeight: 400, 
@@ -67,7 +69,7 @@ const HomePage = () => {
              backgroundColor:'black', 
              '&:hover':{color:'white'},
              borderRadius: '10px',
-             my:1,
+             my:0,
              ml:19,
               }}>
           Take Me
