@@ -3,6 +3,7 @@ import {Box, Grid, Typography,Button,Stack} from '@mui/material';
 import backgroundImage from '../img/wp14198855.webp'; // Import the image
 import Header from './Header';
 import TakeMe from './TakeMe';
+// import ContactUs from './contactus';
 
 const HomePage = () => {
   return (
@@ -77,6 +78,9 @@ const HomePage = () => {
       </Grid>
 
       </Stack>
+      
+      {/* <ContactUs/> */}
+
     </Box>
   </Grid>
   );
