@@ -12,11 +12,11 @@ import Card from './Frontend/Card';
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/home" element={<HomePage />} />
-        <Route path='/header' element={<Header />} />
         <Route path='/takeme' element={<TakeMe />} />
-        <Route path='/contact' element={<ContactUs />}/>
+        <Route path='/contactus' element={<ContactUs />}/>
         <Route path='/' element={<Section/>} />
         <Route path='/products' element={<Products/>} />
         <Route path='/card' element={<Card/>} />

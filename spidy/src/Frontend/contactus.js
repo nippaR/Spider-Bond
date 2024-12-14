@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Button, Grid, Stack, Typography, TextField } from "@mui/material";
-import backgroundImage from '../img/logo.jpg';
+// import backgroundImage from '../img/logo.jpg';
 
 const ContactUs = () => {
     const [name, setName] = useState('');
@@ -59,7 +59,7 @@ const ContactUs = () => {
             <Box
                 sx={{
                     minHeight: '100vh',
-                    backgroundImage: `url(${backgroundImage})`,
+                    backgroundImage: 'linear-gradient(45deg, #000000 30%, #831005 90%)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
@@ -68,6 +68,7 @@ const ContactUs = () => {
                     color: 'white',
                 }}
             >
+               
                 <Stack spacing={12} direction="row" sx={{ ml: 15, gap: 15 }}>
                     <Grid item xs={12} sm={6} sx={{ fontFamily: 'poppins', fontWeight: '200px' }}>
                         <Typography sx={{ fontSize: '2rem', mt: 18, letterSpacing: '0.5rem' }}>
