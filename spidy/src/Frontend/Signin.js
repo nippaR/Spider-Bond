@@ -1,5 +1,5 @@
-import { Box, Grid, TextField, IconButton, Typography, Divider,Button } from '@mui/material';
-import React from 'react';
+import { Box, Grid, TextField, IconButton, Typography, Divider,Button,  InputAdornment } from '@mui/material';
+import {React,useState} from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
@@ -7,6 +7,9 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import backgroundImage from '../img/wp14198855.webp';
 import { Link as RouterLink } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
 
 const StyledLink = styled(RouterLink)({
   color: 'red',
@@ -14,6 +17,13 @@ const StyledLink = styled(RouterLink)({
 });
 
 const Signin = () => {
+    
+      const [showPassword, setShowPassword] = useState(false);
+    
+      const handleClickShowPassword = () => {
+        setShowPassword((prev) => !prev);
+      };
+
     return (
     <Grid sx={{
         display: 'flex',
@@ -63,18 +73,33 @@ const Signin = () => {
                     },
                 }}>
         <TextField id="oued-basic"
-        name = "Username"
-        label="Enter Name" 
+        name = "Email"
+        label="Enter Email" 
         variant="outlined"
         sx={{ width: '400px', mt: 5, ml: 5 }}
          />
 
-        <TextField id="oued-basic"
-        name = "Username"
-        label="Enter Your Email" 
-        variant="outlined"
-        sx={{ width: '400px', mt: 5, ml: 5 }}
-         />
+       <TextField
+            id="password"
+            name="Password"
+            label="Enter Your password"
+            type={showPassword ? 'text' : 'password'}
+            variant="outlined"
+            sx={{ width: '400px', mt: 5, ml: 5 }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    sx={{ color: 'white' }}
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
         <Button>
             <RouterLink to="/home">Sign In</RouterLink>
         </Button>
