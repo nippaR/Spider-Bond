@@ -101,8 +101,8 @@ const Register = () => {
             sx={{ width: '400px', mt: 5, ml: 5 }}
           />
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          <Button  variant="contained" sx={{ width: '100px', mt: 5}}>
-            <RouterLink to="/">Sign UP</RouterLink>
+          <Button  variant="contained" sx={{ width: '100px', mt: 5, ml:9, backgroundColor: 'red', color: 'white' }}>
+            <RouterLink to="/home" style={{textDecoration:'none',color:'white',fontWeight:'bold'}}>Sign Up</RouterLink>
           </Button>
         </Box>
         </Grid>
