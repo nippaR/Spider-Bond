@@ -59,7 +59,7 @@ function Header() {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Link
-                    to={page === 'Home' ? '/' : `/${page.toLowerCase().replace(/\s/g, '')}`}
+                    to={page === 'Home' ? '/home' : `/${page.toLowerCase().replace(/\s/g, '')}`}
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     {page}
@@ -85,7 +85,7 @@ function Header() {
                   '&:hover': { backgroundColor: '#831005', color: 'white' },
                 }}
                 component={Link}
-                to={page === 'Home' ? '/' : `/${page.toLowerCase().replace(/\s/g, '')}`}
+                to={page === 'Home' ? '/home' : `/${page.toLowerCase().replace(/\s/g, '')}`}
               >
                 {page}
               </Button>

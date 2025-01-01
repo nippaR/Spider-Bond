@@ -1,33 +1,38 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const login = require('./models.js');
+const Login = require('./models.js'); // Ensure this is the correct path and model name
 
-//middleware
+// Middleware
 app.use(express.json());
 
-
-//routes
+// Routes
 app.get('/', (req, res) => {
     res.send('Welcome to the Home Page');
 });
 
-
-//post request
-app.post('/login',async(req,res) => {
+// GET request to retrieve all login entries
+app.get('/api/logins', async (req, res) => {
     try {
-        const login = await Login.create(req.body);
-        return res.status(201).send(login);
-    }catch(err) {
-        return res.status(400).send({message:err});
+        const logins = await Login.find(); // Fetch all login documents
+        return res.status(200).json(logins);
+    } catch (err) {
+        return res.status(500).send({ message: "Failed to retrieve logins" });
     }
 });
 
+// POST request
+app.post('/api/login', async (req, res) => {
+    try {
+        const login = await Login.create(req.body);
+        return res.status(201).send(login);
+    } catch (err) {
+        return res.status(400).send({ message: "Failed to create login" });
+    }
+});
 
-
-
-//connect to db
-mongoose.connect("mongodb+srv://Thanuja46:thanu826@backenddb.tijrt.mongodb.net/Login_Details?retryWrites=true&w=majority&appName=BackendDB")
+// Connect to DB
+mongoose.connect("mongodb+srv://Thanuja46:thanu826@backenddb.tijrt.mongodb.net/")
 .then(() => {
     console.log('Connected to DB');
     app.listen(3000, () => {
@@ -35,13 +40,5 @@ mongoose.connect("mongodb+srv://Thanuja46:thanu826@backenddb.tijrt.mongodb.net/L
     });
 })
 .catch((err) => {
-    console.log('Connection Failed: ', err)
+    console.log('Connection Failed: ', err);
 });
-
-
-
-
-
-
-
-
